@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050505;
+  --accent: #E11D48; /* Rose Red */
+  --accent-gold: #fbbf24; /* Amber Gold */
+  --deep-zinc: #0A0A0B;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-zinc-100 antialiased selection:bg-rose-500/30;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/5;
+  }
+  
+  .luxury-card {
+    @apply bg-[#0D0D0F] border border-white/[0.05] hover:border-rose-500/20 transition-all duration-700;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .btn-premium {
+    @apply px-10 py-4 bg-rose-600 hover:bg-rose-700 text-white font-black italic uppercase tracking-tighter rounded-2xl shadow-2xl shadow-rose-600/20 active:scale-95 transition-all duration-500;
+  }
+
+  .text-glow-rose {
+    text-shadow: 0 0 30px rgba(225, 29, 72, 0.4);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#050505];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-rose-600/30 transition-colors;
+}
+
